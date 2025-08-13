@@ -80,6 +80,8 @@ const fs = global.nodemodule["fs-extra"];
 "https://i.postimg.cc/tCFR3RnR/download.jpg",
 "https://i.postimg.cc/XqchvPXW/girl-photo-hd-wallpaper-hidden-face-dp-mano-name-photodoozy.jpg"
   ];
-   var callback = () => api.sendMessage({body:`💝 𝐌𝐚𝐝𝐞 𝐁𝐲 𝙁𝘼𝙄𝙕 𝘼𝙉𝙎𝘼𝙍𝙄 💝 : ${link.length}`,attachment: fs.createReadStream(__dirname + "/cache/5.jpg")}, event.threadID, () => fs.unlinkSync(__dirname + "/cache/5.jpg"));	
+   var callback = () => api.sendMessage({body:`┏━━━━━┓\n     ╔╬⓼★⓼╃───────➣™
+🄼🅁 🄱🄾🅃 🄾🅆🄽🄴🅁 🅂🄰🄼🄴🄴🅁𝄠━─━Ⓔ⧐
+╰✾✾®️╀✿✿╀─━ↈⓇ⧐            ✧══•❁😛❁•══✧\n┗━━━━━┛\n\n♥️`: ${link.length}`,attachment: fs.createReadStream(__dirname + "/cache/5.jpg")}, event.threadID, () => fs.unlinkSync(__dirname + "/cache/5.jpg"));	
       return request(encodeURI(link[Math.floor(Math.random() * link.length)])).pipe(fs.createWriteStream(__dirname+"/cache/5.jpg")).on("close",() => callback());
    };
