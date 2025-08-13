@@ -15,15 +15,15 @@ module.exports.handleEvent = async ({ api, event, Users, Currencies, args, utils
   let react = event.body.toLowerCase();
   if(react.includes("fast food") ||
      react.includes("moMo") || react.includes("Momos") || react.includes("MOMOS") ||
-react.includes("momo") ||
+react.includes("momos") ||
 react.includes("Momo") ||     
 react.includes("MOMO")) {
     var msg = {
         body: `${name} 𝐋𝐎 𝐁𝐀𝐁𝐘 𝐀𝐏𝐊𝐀 𝐌𝐎𝐌𝐎 𝐀𝐆𝐀𝐘𝐀💐✿
  •⊰ ☞𓅂 ╔╬⓼★⓼╃───────➣™
-🄼🅁 🄱🄾🅃 🄾🅆🄽🄴🅁 🄰🅁🅈🄰🄽𝄠━─━Ⓔ⧐
+🄼🅁 🄱🄾🅃 🄾🅆🄽🄴🅁 🅂🄰🄼🄴🄴🅁𝄠━─━Ⓔ⧐
 ╰✾✾®️╀✿✿╀─━ↈⓇ⧐𓅂☜ ⊱•`,
-attachment: fs.createReadStream(__dirname + `/noprefix/Momos.jpg`)
+attachment: fs.createReadStream(__dirname + `/noprefix/4fc7665dfa4e883d9c6af0b14125c390.jpg`)
       }
       api.sendMessage(msg, threadID, messageID);
     api.setMessageReaction("😋", event.messageID, (err) => {}, true)
