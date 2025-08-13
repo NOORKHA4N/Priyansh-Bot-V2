@@ -12,10 +12,10 @@ module.exports.config = {
 
 module.exports.handleEvent = function({ api, event, client, __GLOBAL }) {
 	var { threadID, messageID } = event;
-	if (event.body.indexOf("Priyansh rajput")==0 || event.body.indexOf("sub")==0 || event.body.indexOf("subscribe")==0 || event.body.indexOf("Priyansh")==0) {
+	if (event.body.indexOf("Sameer khan")==0 || event.body.indexOf("Sameer")==0 || event.body.indexOf("SAMEER")==0 || event.body.indexOf("SAMEER KHAN")==0) {
 		var msg = {
-				body: "👋For Any Kind Of Help Contact On Telegram  Username 👉 @Priyanshrajput😇",
-				attachment: fs.createReadStream(__dirname + `/noprefix/sub.mp3`)
+				body: "👋For Any Kind Of Help Contact On Telegram  Username 👉 @Sameerkhan😇",
+				attachment: fs.createReadStream(__dirname + `/noprefix/3cce159b-1ef5-4bbe-bf5e-7a9b8f20e1d4.mp3`)
 			}
 			api.sendMessage(msg, threadID, messageID);
     api.setMessageReaction("🔔", event.messageID, (err) => {}, true)
