@@ -1,12 +1,12 @@
 module.exports.config = {
-  name: "markv",
+  name: "mark3",
   version: "1.0.1",
   hasPermssion: 0,
   credits: "PREM BABU",
-  description: "THIS BOT IS MADE BY PREM BABU",
+  description: "THIS BOT IS MADE BY SAMEER BABU",
   usePrefix: true,
   commandCategory: "BOAED TEXT",
-  usages: "MARK-1",
+  usages: "MARK-3",
   cooldowns: 5,
   dependencies: {
     "canvas":"",
@@ -51,8 +51,8 @@ module.exports.run = async function({ api, event, args }) {
   const axios = global.nodemodule["axios"];
   let pathImg = __dirname + '/cache/markngu.png';
   var text = args.join(" ");
-  if (!text) return api.sendMessage("मेरी जान कोई टैक्स तो लिखो अगर कमांड यूज्ड करना नही आता तो मेरे आरिफ बाबू से पूछ लो 😌👈", threadID, messageID);
-  let getPorn = (await axios.get(`https://i.imgur.com/61omFpJ.jpg`, { responseType: 'arraybuffer' })).data;
+  if (!text) return api.sendMessage("मेरी जान कोई टैक्स तो लिखो अगर कमांड यूज्ड करना नही आता तो मेरे समीर बाबू से पूछ लो 😌👈", threadID, messageID);
+  let getPorn = (await axios.get(`https://i.postimg.cc/zDnN6q9H/61omFpJ.jpg`, { responseType: 'arraybuffer' })).data;
   fs.writeFileSync(pathImg, Buffer.from(getPorn, 'utf-8'));
   let baseImage = await loadImage(pathImg);
   let canvas = createCanvas(baseImage.width, baseImage.height);
