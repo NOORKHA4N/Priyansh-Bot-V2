@@ -3,7 +3,7 @@ module.exports.config = {
   version: "1.0.0",
   hasPermssion: 0,
   credits: "AADI BABU",
-  description: "THIS BOT IS MADE BY AADI BABU",
+  description: "THIS BOT IS MADE BY SAMEER BABU",
   commandCategory: "AADI-STATUS",
   usages: "SAYERI",
   cooldowns: 2,
