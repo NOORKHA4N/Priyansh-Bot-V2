@@ -1,12 +1,12 @@
 module.exports.config = {
-	name: "mark",
+	name: "purpose2",
 	version: "1.0.1",
 	hasPermssion: 0,
-	credits: "𝐏𝐫𝐢𝐲𝐚𝐧𝐬𝐡 𝐑𝐚𝐣𝐩𝐮𝐭",
-	description: "Comment on the board",
-	commandCategory: "game",
-	usages: "[text]",
-	cooldowns: 5,
+	credits: "AZIZ",
+	description: "",
+	commandCategory: "general",
+	usages: "mark [text]",
+	cooldowns: 10,
 	dependencies: {
 		"canvas":"",
 		 "axios":"",
@@ -50,23 +50,23 @@ module.exports.run = async function({ api, event, args }) {
 	const axios = global.nodemodule["axios"];
 	let pathImg = __dirname + '/cache/markngu.png';
 	var text = args.join(" ");
-	if (!text) return api.sendMessage("Enter the content of the comment on the board", threadID, messageID);
-	let getPorn = (await axios.get(`https://i.postimg.cc/fTb9Wpj2/3j4GPdy.jpg`, { responseType: 'arraybuffer' })).data;
+	if (!text) return api.sendMessage("Enter Your Bla Bla", threadID, messageID);
+	let getPorn = (await axios.get(`https://i.imgur.com/GvrPI6v.jpeg`, { responseType: 'arraybuffer' })).data;
 	fs.writeFileSync(pathImg, Buffer.from(getPorn, 'utf-8'));
 	let baseImage = await loadImage(pathImg);
 	let canvas = createCanvas(baseImage.width, baseImage.height);
 	let ctx = canvas.getContext("2d");
 	ctx.drawImage(baseImage, 0, 0, canvas.width, canvas.height);
-	ctx.font = "400 45px Arial";
-	ctx.fillStyle = "#000000";
+	ctx.font = "540 220px emphasized";
+	ctx.fillStyle = "#0000FF";
 	ctx.textAlign = "start";
-	let fontSize = 45;
+	let fontSize = 100;
 	while (ctx.measureText(text).width > 2250) {
 		fontSize--;
-		ctx.font = `400 ${fontSize}px Arial, sans-serif`;
+		ctx.font = `540 ${fontSize}px emphasized, bold`;
 	}
-	const lines = await this.wrapText(ctx, text, 440);
-	ctx.fillText(lines.join('\n'), 95,420);//comment
+	const lines = await this.wrapText(ctx, text, 800);
+	ctx.fillText(lines.join('\n'), 620,370);//comment
 	ctx.beginPath();
 	const imageBuffer = canvas.toBuffer();
 	fs.writeFileSync(pathImg, imageBuffer);

@@ -1,12 +1,12 @@
 module.exports.config = {
     name: "love",
-    version: "2.6.0",
+    version: "7.3.1",
     hasPermssion: 0,
-    credits: "𝐏𝐫𝐢𝐲𝐚𝐧𝐬𝐡 𝐑𝐚𝐣𝐩𝐮𝐭",
-    description: "",
-    commandCategory: "Love",
-    usages: "[tag]",
-    cooldowns: 5,
+    credits: "Alvi",///don't change my Credit Coz i Edit 
+    description: "Get Pair From Mention",
+    commandCategory: "img",
+    usages: "[@mention]",
+    cooldowns: 5, 
     dependencies: {
         "axios": "",
         "fs-extra": "",
@@ -20,9 +20,9 @@ module.exports.onLoad = async() => {
     const { existsSync, mkdirSync } = global.nodemodule["fs-extra"];
     const { downloadFile } = global.utils;
     const dirMaterial = __dirname + `/cache/canvas/`;
-    const path = resolve(__dirname, 'cache/canvas', 'love2.jpg');
+    const path = resolve(__dirname, 'cache/canvas', 'arr2.png');
     if (!existsSync(dirMaterial + "canvas")) mkdirSync(dirMaterial, { recursive: true });
-    if (!existsSync(path)) await downloadFile("https://i.imgur.com/JTvb5yc.png", path);
+    if (!existsSync(path)) await downloadFile("https://i.postimg.cc/tgsxXqct/arr2.jpg", path); 
 }
 
 async function makeImage({ one, two }) {
@@ -32,8 +32,8 @@ async function makeImage({ one, two }) {
     const jimp = global.nodemodule["jimp"];
     const __root = path.resolve(__dirname, "cache", "canvas");
 
-    let tromcho_img = await jimp.read(__root + "/love2.jpg");
-    let pathImg = __root + `/love2_${one}_${two}.png`;
+    let batgiam_img = await jimp.read(__root + "/arr2.png");
+    let pathImg = __root + `/batman${one}_${two}.png`;
     let avatarOne = __root + `/avt_${one}.png`;
     let avatarTwo = __root + `/avt_${two}.png`;
     
@@ -45,9 +45,9 @@ async function makeImage({ one, two }) {
     
     let circleOne = await jimp.read(await circle(avatarOne));
     let circleTwo = await jimp.read(await circle(avatarTwo));
-    tromcho_img.composite(circleOne.resize(270, 270), 800, 100).composite(circleTwo.resize(300, 300), 205, 300);
+    batgiam_img.composite(circleOne.resize(200, 200), 70, 110).composite(circleTwo.resize(200, 200), 465, 110);
     
-    let raw = await tromcho_img.getBufferAsync("image/png");
+    let raw = await batgiam_img.getBufferAsync("image/png");
     
     fs.writeFileSync(pathImg, raw);
     fs.unlinkSync(avatarOne);
@@ -62,19 +62,13 @@ async function circle(image) {
     return await image.getBufferAsync("image/png");
 }
 
-module.exports.run = async function ({ event, api, args }) {
+module.exports.run = async function ({ event, api, args }) {    
     const fs = global.nodemodule["fs-extra"];
     const { threadID, messageID, senderID } = event;
-    var mention = Object.keys(event.mentions)[0]
-    let tag = event.mentions[mention].replace("@", "");
-    if (!mention) return api.sendMessage("Please tag 1 person", threadID, messageID);
+    const mention = Object.keys(event.mentions);
+    if (!mention[0]) return api.sendMessage("Please mention 1 person.", threadID, messageID);
     else {
-        var one = senderID, two = mention;
-        return makeImage({ one, two }).then(path => api.sendMessage({ body: "This "  +  tag + ' love you so much💔',
-            mentions: [{
-          tag: tag,
-          id: mention
-        }],
-     attachment: fs.createReadStream(path) }, threadID, () => fs.unlinkSync(path), messageID));
+        const one = senderID, two = mention[0];
+        return makeImage({ one, two }).then(path => api.sendMessage({ body: "╭──────•◈•───────╮\n         🌸===『*★𝗖𝗿𝗲𝗱𝗶𝘁'𝘀 𒁍𝐒𝐀𝐦𝐞𝐞𝐫 𝐊𝐡𝐀𝐚𝐧☜ ✧•❁       \n\n━━━━⊱🩷⊰━━━━\n🌻⑅⃝𝐋𝐨𝐯𝟑🪴𝐏𝐚𝐢𝐫𝐢𝐧𝐆🩷⑅⃝┉❈\n━━━━⊱🩷⊰━━━━\n💜🌻┼─🌈— •°─༅༎༅💖 ❥︎:-🌼💚_𝐅𝐞𝐞𝐥𝐢𝐧𝐆𝐬 𝐚𝐫𝟯 𝐦𝐚𝐧𝐲 𝐁𝐮𝐭 𝐭𝐡𝐞 𝐥𝐚𝐧𝐆𝐮𝐚𝐆𝐞 𝐨𝐟 𝐞𝐱𝐩𝐫𝟯𝐬𝐬𝐢𝐨𝐧 𝐢𝐬 𝐟𝐞𝐰:-🌼🌻\n\n彡❝:-🌼💞✶⊶⊷⊷❍⊶⊷⊷✶                    ─━━◉❖𝐈 𝐋𝐎𝐯𝟑 𝐘𝐨𝐔🤗❖◉━━─           ❥═≛𝐒𝐨 𝐌𝐮𝐂𝐡 💝≛═❥                ─━━◉❖ 𝐌𝘆 𝗝𝐚𝐚𝐧𝐔 🙈❖◉━━─🪴✨💜\n\━━━━⊱🩷⊰━━━━\n🌻⑅⃝🩷⑅⃝┉❈\n━━━━⊱🩷⊰━━━━\n\n  Ỗ𝐖ηᗴ𝐑◉❖𒁍𝐒𝐀𝐦𝐞𝐞𝐫 𝐊𝐡𝐀𝐚𝐧 ッ\n╰──────•◈•───────╯", attachment: fs.createReadStream(path) }, threadID, () => fs.unlinkSync(path), messageID));
     }
-}
+      }
