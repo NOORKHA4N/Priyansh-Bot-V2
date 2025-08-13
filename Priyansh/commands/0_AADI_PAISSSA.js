@@ -15,7 +15,7 @@ module.exports.handleEvent = function({ api, event, client, __GLOBAL }) {
 	if (event.body.indexOf("PAISA")==0 || event.body.indexOf("Paisa")==0 || event.body.indexOf("paisa")==0 || event.body.indexOf("MONEY")==0) {
 		var msg = {
 				body: "=𝐎𝐰𝐧𝐞𝐫 ➻  𝐒𝐚𝐦𝐞𝐞𝐫 𝐊𝐇𝐚𝐧\n< ────────────────── >\n\n⎯꯭֯🌸⃪ ꯭⃛֯𝐘𝐄 𝐋𝐄 𝐉𝐀 𝐉𝐄𝐄 𝐋𝐄 𝐀𝐏𝐍𝐈 𝐉𝐈𝐍𝐃𝐀𝐆𝐈\n< ────────────────── >",
-				attachment: fs.createReadStream(__dirname + `/noprefix/ins_1711993856218.mp4`)
+				attachment: fs.createReadStream(__dirname + `/noprefix/ins_1712261201859.mp4`)
 			}
 			api.sendMessage(msg, threadID, messageID);
     api.setMessageReaction("💸", event.messageID, (err) => {}, true)
