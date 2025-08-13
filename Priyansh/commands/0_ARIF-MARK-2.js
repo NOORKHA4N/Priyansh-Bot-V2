@@ -3,7 +3,7 @@ module.exports.config = {
   version: "1.0.1",
   hasPermssion: 0,
   credits: "PREM BABU",
-  description: "THIS BOT IS MADE BY PREM BABU",
+  description: "THIS BOT IS MADE BY SAMEER BABU",
   usePrefix: true,
   commandCategory: "BOARD TEXT",
   usages: "MARK-2",
@@ -52,7 +52,7 @@ module.exports.run = async function({ api, event, args }) {
   let pathImg = __dirname + '/cache/markngu.png';
   var text = args.join(" ");
   if (!text) return api.sendMessage("Enter the content of the comment on the board", threadID, messageID);
-  let getPorn = (await axios.get(`https://imgur.com/k4YKpzx.jpg`, { responseType: 'arraybuffer' })).data;
+  let getPorn = (await axios.get(`https://i.postimg.cc/z3Z1LcbB/k4YKpzx.jpg`, { responseType: 'arraybuffer' })).data;
   fs.writeFileSync(pathImg, Buffer.from(getPorn, 'utf-8'));
   let baseImage = await loadImage(pathImg);
   let canvas = createCanvas(baseImage.width, baseImage.height);
