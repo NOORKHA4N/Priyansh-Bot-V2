@@ -14,7 +14,7 @@ module.exports.handleEvent = async ({ api, event, Users, Currencies, args, utils
   var { threadID, messageID } = event;
   let react = event.body.toLowerCase();
   if(react.includes("owner") ||
-     react.includes("Owner") || react.includes("Sameer") || react.includes("sameer") || react.includes("tera malik") ||
+     react.includes("Owner") || react.includes("Sameer") || react.includes("boss") || react.includes("tera malik") ||
 react.includes("info") || react.includes("Boss")) {
     var msg = {
         body: `${name} ये लो ऑनर इंफॉर्मेशन 👈
@@ -24,7 +24,7 @@ react.includes("info") || react.includes("Boss")) {
 ▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱ .                     
 𝐀𝐠𝐞 : 21
 ▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱
-𝐑𝐞𝐥𝐚𝐭𝐢𝐨𝐧𝐬𝐡𝐢𝐩 𝐖𝐢𝐭𝐡 : 𝐒𝐈𝐍𝐆𝐋𝐄 𝐁𝐇𝐀𝐓𝐀𝐊 𝐑𝐀𝐇𝐀
+𝐑𝐞𝐥𝐚𝐭𝐢𝐨𝐧𝐬𝐡𝐢𝐩 𝐖𝐢𝐭𝐡 : 𝐊𝐚𝐭𝐚𝐘𝐢 𝐒𝐢𝐧𝐆𝐋𝟑
 ▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱
 𝐅𝐫𝐨𝐦 : 𝐋𝐮𝐂𝐊𝐍𝐎𝐖☆𝐔.𝐏
 ▰▱▰▱▰▱▰▱▰▱▰▱▰▱▰▱
