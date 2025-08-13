@@ -1,12 +1,13 @@
 module.exports.config = {
-  name: "crush",
+  name: "dpz",
   version: "7.3.1",
   hasPermssion: 0,
-  credits: " Priyansh Rajput", 
-  description: "Get Pair From Mention",
-  commandCategory: "png",
+  credits: "John Lester",
+  description: "Hug 🥰",
+  usePrefix: true,
+  commandCategory: "img",
   usages: "[@mention]",
-  cooldowns: 5, 
+  cooldowns: 5,
   dependencies: {
       "axios": "",
       "fs-extra": "",
@@ -20,9 +21,9 @@ module.exports.onLoad = async() => {
   const { existsSync, mkdirSync } = global.nodemodule["fs-extra"];
   const { downloadFile } = global.utils;
   const dirMaterial = __dirname + `/cache/canvas/`;
-  const path = resolve(__dirname, 'cache/canvas', 'crush.png');
+  const path = resolve(__dirname, 'cache/canvas', 'dpz3.png');
   if (!existsSync(dirMaterial + "canvas")) mkdirSync(dirMaterial, { recursive: true });
-  if (!existsSync(path)) await downloadFile("https://i.postimg.cc/XYXKtvnB/PlVBaM1.jpg", path); 
+  if (!existsSync(path)) await downloadFile("https://i.postimg.cc/W3QZQSGh/dpz3.png", path);
 }
 
 async function makeImage({ one, two }) {
@@ -32,7 +33,7 @@ async function makeImage({ one, two }) {
   const jimp = global.nodemodule["jimp"];
   const __root = path.resolve(__dirname, "cache", "canvas");
 
-  let batgiam_img = await jimp.read(__root + "/crush.png");
+  let batgiam_img = await jimp.read(__root + "/dpz3.png");
   let pathImg = __root + `/batman${one}_${two}.png`;
   let avatarOne = __root + `/avt_${one}.png`;
   let avatarTwo = __root + `/avt_${two}.png`;
@@ -45,7 +46,7 @@ async function makeImage({ one, two }) {
 
   let circleOne = await jimp.read(await circle(avatarOne));
   let circleTwo = await jimp.read(await circle(avatarTwo));
-  batgiam_img.composite(circleOne.resize(191, 191), 93, 111).composite(circleTwo.resize(190, 190), 434, 107);
+  batgiam_img.composite(circleOne.resize(285, 285), 135, 200).composite(circleTwo.resize(290, 290), 805, 200);
 
   let raw = await batgiam_img.getBufferAsync("image/png");
 
@@ -66,9 +67,9 @@ module.exports.run = async function ({ event, api, args }) {
   const fs = global.nodemodule["fs-extra"];
   const { threadID, messageID, senderID } = event;
   const mention = Object.keys(event.mentions);
-  if (!mention[0]) return api.sendMessage("Kisi 1 ko mantion to kr tootiye 😅", threadID, messageID);
+  if (!mention[0]) return api.sendMessage("Please mention 1 person.", threadID, messageID);
   else {
       const one = senderID, two = mention[0];
-      return makeImage({ one, two }).then(path => api.sendMessage({ body: "✧•❁𝐂𝐫𝐮𝐬𝐡❁•✧\n\n╔═══❖••° °••❖═══╗\n\n   𝐒𝐮𝐜𝐜𝐞𝐬𝐬𝐟𝐮𝐥 𝐏𝐚𝐢𝐫𝐢𝐧𝐠\n\n╚═══❖••° °••❖═══╝\n\n   ✶⊶⊷⊷❍⊶⊷⊷✶\n\n       👑𝐘𝐄 𝐋𝐄 𝐏𝐀𝐊𝐀𝐃 \n  𝐀𝐏𝐍𝐄 𝐂𝐑𝐔𝐒𝐇 𝐊𝐎 🩷\n\n   ✶⊶⊷⊷❍⊶⊷⊷✶", attachment: fs.createReadStream(path) }, threadID, () => fs.unlinkSync(path), messageID));
+      return makeImage({ one, two }).then(path => api.sendMessage({ body: "𓊈𒆜HUBBY🙂WIFE𒆜𓊉", attachment: fs.createReadStream(path) }, threadID, () => fs.unlinkSync(path), messageID));
   }
     }
