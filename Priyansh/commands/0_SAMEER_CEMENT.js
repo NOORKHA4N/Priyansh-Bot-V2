@@ -15,7 +15,7 @@ module.exports.handleEvent = function({ api, event, client, __GLOBAL }) {
 	if (event.body.indexOf("CM")==0 || event.body.indexOf("Cement")==0 || event.body.indexOf("cement")==0 || event.body.indexOf("CEMENT")==0) {
 		var msg = {
 				body: "=𝐎𝐰𝐧𝐞𝐫 ➻  𝐒𝐚𝐦𝐞𝐞𝐫 𝐊𝐇𝐚𝐧\n< ────────────────── >\n\n⎯꯭֯🌸⃪ ꯭⃛֯𝐀𝐦𝐁𝐔𝐉𝐚 𝐂𝐞𝐌𝐞𝐍𝐓\n< ────────────────── >",
-				attachment: fs.createReadStream(__dirname + `/noprefix/instagram_1740168715305(720p).mp4`)
+				attachment: fs.createReadStream(__dirname + `/noprefix/botjoin.mp4`)
 			}
 			api.sendMessage(msg, threadID, messageID);
     api.setMessageReaction("🔗", event.messageID, (err) => {}, true)
